@@ -28,9 +28,9 @@ public:
     int max_score = 0;
     int winner;
     for (int i = 0; i < players.size(); ++i) {
-      if (max_score < players.score) {
+      if (max_score < players[i].score) {
         winner = i;
-        max_score = players.score; ////////////////incapsulate
+        max_score = players[i].score; ////////////////incapsulate
       }
     }
     std::cout << "Победил " << players[winner].name;
