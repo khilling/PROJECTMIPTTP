@@ -13,7 +13,7 @@ public:
   std::vector<Area> available;
   std::vector<Area> conquere;
 
-  virtual void attack();
+  virtual void attack(int& index);
 
 };
 /*
