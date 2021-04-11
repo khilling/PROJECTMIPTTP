@@ -1,4 +1,5 @@
 #include <string>
+#include <vector>
 #include "Areas.h"
 
 
@@ -14,11 +15,13 @@ public:
   virtual void attack();
 
 };
+/*
 
-Player{
+struct Player{
   int  name;
   int  score;
   int  Base;
   int  std::string name;
-  vi void attack();
+  void attack();
 };
+*/

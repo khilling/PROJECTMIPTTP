@@ -2,7 +2,6 @@
 #include <string>
 #include <cstdlib>
 #include <ctime>
-
 using std::string;
 using std::cout;
 using std::cin;
@@ -14,29 +13,6 @@ enum Theme {
     Prog,
 
     LASTTHEME
-};
-
-class Area {
-public:
-    string name;
-    Question* question;
-    int number;
-
-
-    Area(const string theme, int i) {
-        number = i;
-        std::srand(std::time(nullptr));
-        Theme rand_theme = static_cast<Theme>(rand() % LASTTHEME);
-
-        switch (rand_theme) {
-            case Physics:
-                question = new PhysicsQuestion();
-                break;
-            case Prog:
-                question = new ProgrammingQuestion();
-                break;
-        }
-    }
 };
 
 class Question {
@@ -60,9 +36,6 @@ public:
         }
     }
 };
-
-
-
 class PhysicsQuestion: public Question {
 public:
 
@@ -78,6 +51,32 @@ public:
     virtual void set_question() override {
         question_body = "Как тебе эта программа?\nОна совершенна\nЛучше не видел\nИграю весь день\n";
         question_ans = 2;
+    }
+};
+class Area {
+public:
+    string name;
+    Question *question;
+    int number;
+
+
+    Area(const string theme, int i) {
+        number = i;
+        std::srand(std::time(nullptr));
+        Theme rand_theme = static_cast<Theme>(rand() % LASTTHEME);
+
+        switch (rand_theme) {
+            case Physics:
+                question = new PhysicsQuestion();
+                break;
+            case Prog:
+                question = new ProgrammingQuestion();
+                break;
+        }
+
+
+
+
     }
 };
 
