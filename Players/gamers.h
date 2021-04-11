@@ -3,6 +3,7 @@
 #include <vector>
 #include "../Player.h"
 class Gamer: public Player{
+public:
   std::vector<Area> available;
   std::vector<Area> conquere;
   int score;
