@@ -16,9 +16,16 @@ public:
   std::vector<Gamer> players;
   std::vector<std::string> themes{"Art","News","Literature","Programming","English","Math","Phisics"};
   int turns;
+    void makeAreas(){
+        for(int i = 0; i < 6; ++i){
+            area.push_back(Area(themes[i], i));
+        }
+    }
   void StartGame() {
     std::cout << "Игра началась";
-    players.push_back(Gamer(area[1]), Gamer(area[1]));
+    makeAreas();
+    players.push_back(Gamer(area[0]));
+    players.push_back(Gamer(area[1]));
     std::cout << "Как долго играем?";
     std::cin >> turns;
     for (int i = 0; i < turns; ++i) {
@@ -35,11 +42,7 @@ public:
     }
     std::cout << "Победил " << players[winner].name;
   }
-  void makeAreas(){
-    for(int i = 0; i < 6; ++i){
-      area.push_back(Area(themes[i], i));
-    }
-  }
+
   void turn(Player player) {
     std::cout << "Выберите область для атаки "
               << "\n";
