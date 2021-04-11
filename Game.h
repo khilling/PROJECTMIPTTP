@@ -1,14 +1,10 @@
-//
-// Created by lepad on 21.03.2021.
-//
 #include "Player.h"
 #include <iostream>
 #include <string>
 #include <vector>
 #include "Areas.h"
 #include "Players/gamers.h"
-#ifndef TPPROJECT__GAME_H_
-#define TPPROJECT__GAME_H_
+
 const int inf = 100000000; //////////////////////
 class Game {
 public:
@@ -55,4 +51,3 @@ public:
   }
 };
 
-#endif // TPPROJECT__GAME_H_

@@ -1,3 +1,4 @@
+
 #pragma once
 #include <iostream>
 #include <string>
@@ -21,7 +22,7 @@ public:
     string question_body;
     int question_ans;
 
-    virtual void set_question();
+    virtual void set_question(){};
     bool get_question() {
         cout << question_body << endl;
         cout << "Выбери 1/2/3/4: ";
@@ -161,4 +162,3 @@ class News : virtual public Area {
     }
 };
 */
-

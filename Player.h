@@ -7,14 +7,15 @@
 class Player {
 public:
   std::string name;
-  int score;
-  int location;
+  int score{};
+  int location{};
   
   std::vector<Area> available;
   std::vector<Area> conquere;
-
-  virtual void attack(int& index);
-
+  Player()= default;
+  virtual void attack(int& index){};
+  virtual ~Player(){};
+   Player(Area &Base);
 };
 /*
 
