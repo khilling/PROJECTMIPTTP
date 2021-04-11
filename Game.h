@@ -18,25 +18,25 @@ public:
         }
     }
   void StartGame() {
-    std::cout << "Игра началась";
+    std::cout << "Игра началась" <<'\n';
     makeAreas();
     players.push_back(Gamer(area[0]));
     players.push_back(Gamer(area[1]));
-    std::cout << "Как долго играем?";
+    std::cout << "Как долго играем?" << '\n';
     std::cin >> turns;
     for (int i = 0; i < turns; ++i) {
       turn(players[i % players.size()]);
     }
 
     int max_score = 0;
-    int winner;
+    int winner = 0;
     for (int i = 0; i < players.size(); ++i) {
       if (max_score < players[i].score) {
         winner = i;
         max_score = players[i].score; ////////////////incapsulate
       }
     }
-    std::cout << "Победил " << players[winner].name;
+    std::cout << "Победил " << players[winner].name <<'\n';
   }
 
   void turn(Player player) {

@@ -18,7 +18,7 @@ public:
   }
   void attack(int& index_area){
     Area target = available[index_area];
-    if (target.question->get_question() == true){
+    if (target.question->get_question()){
       conquere.push_back(target);
     }
   }

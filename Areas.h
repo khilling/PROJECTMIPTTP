@@ -25,7 +25,7 @@ public:
     virtual void set_question(){};
     bool get_question() {
         cout << question_body << endl;
-        cout << "Выбери 1/2/3/4: ";
+        cout << "Выбери 1/2/3/4:\n";
 
         while (true) {
             string choose;
