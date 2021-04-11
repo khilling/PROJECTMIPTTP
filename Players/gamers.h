@@ -2,18 +2,19 @@
 #include <string>
 #include <vector>
 #include "../Player.h"
-class Gamer: public Area{
+class Gamer: public Player{
   std::vector<Area> available;
   std::vector<Area> conquere;
   int score;
   Area Base;
   std::string name;
-  void createPlayer(Area Base) {
+  Gamer (Area &Base): Base(Base) {
     std::cout << "Каково ваше имя?";
     std::cin >> name;
-    this->Base = Base
+    score = 0;
+
   }
-  void attack(int index_area, ){
+  void attack(int index_area){
     Area target = available[index_area];
     if (target.get_question() == true){
       conquere.push_back(target);
