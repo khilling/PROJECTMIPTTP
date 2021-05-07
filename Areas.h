@@ -31,13 +31,14 @@ public:
             string choose;
             cin >> choose;
             try {
-                return (std::stoi(choose) == question_ans);
+                return std::stoi(choose) == question_ans;
             } catch (const std::invalid_argument& e) {
                 cout << "ВВЕДИ ЦИФРУ\n";
             }
         }
     }
 };
+
 class PhysicsQuestion: public Question {
 public:
 
@@ -55,18 +56,16 @@ public:
         question_ans = 2;
     }
 };
+
 class Area {
 public:
     string name;
     Question *question;
     int number;
-
-
     Area(const string theme, int i) {
         number = i;
         std::srand(std::time(nullptr));
         Theme rand_theme = static_cast<Theme>(rand() % LASTTHEME);
-
         switch (rand_theme) {
             case Physics:
                 question = new PhysicsQuestion();
@@ -75,90 +74,5 @@ public:
                 question = new ProgrammingQuestion();
                 break;
         }
-
-
-
-
     }
 };
-
-
-//USEFUL DATA
-/*
-class Math : virtual public Area {
-    int set_question() {
-        std::cout << "Сколько сторон в треугольника?" << "\n";
-        std::cout << "1" << "\n";
-        std::cout << "1" << "\n";
-        std::cout << "3" << "\n";
-        std::cout << "5" << "\n";
-        std::cout << "Выбери -- 1, 2, 3 или 4" << "\n";
-        return 3;
-    }
-};
-
-
-class English : virtual public Area {
-    int set_question() {
-        std::cout << "С какой буквы пишется я в английском?" << "\n";
-        std::cout << "С большой" << "\n";
-        std::cout << "С маленькой" << "\n";
-        std::cout << "С прописной" << "\n";
-        std::cout << "Со строчной" << "\n";
-        std::cout << "Выбери -- 1, 2, 3 или 4" << "\n";
-        return 1;
-    }
-};
-
-
-class Programming : virtual public Area {
-    int set_question() {
-        std::cout << "Нравится эта игра?" << "\n";
-        std::cout << "Да, это  лучшее, что я видел" << "\n";
-        std::cout << "Это прекрасно" << "\n";
-        std::cout << "Играю весь день" << "\n";
-        std::cout << "Конечно" << "\n";
-        std::cout << "Выбери -- 1, 2, 3 или 4" << "\n";
-        return 4;
-    }
-};
-
-
-class Literature : virtual public Area {
-    int set_question() {
-        std::cout << "Какое отчество у Довлатова?" << "\n";
-        std::cout << "Сергеевич" << "\n";
-        std::cout << "Донатович" << "\n";
-        std::cout << "Львович" << "\n";
-        std::cout << "Клементьевич" << "\n";
-        std::cout << "Выбери -- 1, 2, 3 или 4" << "\n";
-        return 2;
-    }
-};
-
-
-class Art : virtual public Area {
-    int set_question() {
-        std::cout << "Кто придумал лого чупа чупса?" << "\n";
-        std::cout << "Пикассо" << "\n";
-        std::cout << "Пикасо" << "\n";
-        std::cout << "Дали" << "\n";
-        std::cout << "Взяли" << "\n";
-        std::cout << "Выбери -- 1, 2, 3 или 4" << "\n";
-        return 3;
-    }
-};
-
-
-class News : virtual public Area {
-    int set_question() {
-        std::cout << "Какая лучшая вакцина от ковида?" << "\n";
-        std::cout << "Файзер5" << "\n";
-        std::cout << "СпутникВи" << "\n";
-        std::cout << "Эпивак" << "\n";
-        std::cout << "БиоЭнТеч" << "\n";
-        std::cout << "Выбери -- 1, 2, 3 или 4" << "\n";
-        return 2;
-    }
-};
-*/
