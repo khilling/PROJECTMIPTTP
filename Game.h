@@ -10,7 +10,7 @@ class Game {
 public:
   std::vector<Area> area;
   std::vector<Gamer> players;
-  std::vector<std::string> themes{"Art","News","Literature","Programming","English","Math","Phisics"};
+  std::vector<std::string> themes{"Art","News","Literature","Programming","English","Math","Physics"};
   int turns;
     void makeAreas(){
         for(int i = 0; i < 6; ++i){
